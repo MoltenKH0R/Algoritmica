@@ -8,7 +8,7 @@ void merge(int *a, int lena, int *b, int lenb){
 	i=0;
 	j=0;
 	for(k=0; k<(lena+lenb); k++){
-		if(a[i]<b[j] && i<lena){
+		if(a[i]<b[j] && i<lena || j==lenb){
 			c[k] = a[i];
 			i++;	
 		}else if(j<lenb){
