@@ -16,4 +16,4 @@ int main(){
 	somma(N, &S, &som);
 	printf("%d\n", som);
 	return 0;
-}
+}	
