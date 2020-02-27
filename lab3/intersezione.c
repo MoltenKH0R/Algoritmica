@@ -21,8 +21,8 @@ int intersection_ord(int *x, int lenx, int *y, int leny){
 }
 
 int main(){
-	int a1[100000];
-	int a2[100000];
+	int a1[1000000];
+	int a2[1000000];
 	int q1, q2;
 
 	scanf("%d", &q1);
