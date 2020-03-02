@@ -9,19 +9,26 @@
   La funzione deve restituire la posizione del perno dopo che gli elementi sono 
   stati partizionati.
 */
+void swap(int* a, int* b){
+	int tmp;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
 int distribuzione(int a[], int sx, int px, int dx) { 
-	int x = a[sx];
 	int i = sx-1;
-	int j = dx+1;
-	while(1){
-		while(a[j]>x){ j--; }
-		while(a[i]<x){ i++; }
-		if(i<j){
-			int tmp = a[j];
-			a[j] = a[i];
-			a[i] = tmp;
-		}else return j;
+	int j;
+	swap(&a[px], &a[dx]);
+
+	for(j=sx; j<dx-1; j++){
+		if(a[j]<=a[dx]){
+			i++;
+			swap(&a[i], &a[j]);
+		}
 	}
+	swap(&a[i+1], &a[dx]);
+	return i+1;
 }
 
 void quicksort( int a[], int sx, int dx ) {
@@ -29,7 +36,7 @@ void quicksort( int a[], int sx, int dx ) {
   int perno, pivot;
   if( sx < dx ) {
  		
-    pivot = (sx+dx)/2;
+    pivot = (rand()%(dx-sx+1))+sx;
 
     perno = distribuzione(a, sx, pivot, dx); /* separa gli elementi minori di a[pivot] 
 					        da quelli maggiori o uguali */
