@@ -22,7 +22,7 @@ void sort(char words[][M], int N){
 }
 
 int main(){
-	char words[100][M];
+	char words[3000][M];
 	int N;
 	int i;
 	scanf("%d", &N);
