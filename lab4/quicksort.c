@@ -21,7 +21,7 @@ int distribuzione(int a[], int sx, int px, int dx) {
 	int j;
 	swap(&a[px], &a[dx]);
 
-	for(j=sx; j<dx-1; j++){
+	for(j=sx; j<=dx-1; j++){
 		if(a[j]<=a[dx]){
 			i++;
 			swap(&a[i], &a[j]);
